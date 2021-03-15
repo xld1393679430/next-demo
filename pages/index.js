@@ -1,6 +1,4 @@
 import React from "react";
-import "../styles/index.less";
-
 
 const Index = () => {
     return (
