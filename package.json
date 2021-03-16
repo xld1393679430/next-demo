@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@zeit/next-less": "^1.0.1",
     "antd": "^4.14.0",
+    "classnames": "^2.2.6",
     "isomorphic-unfetch": "^3.1.0",
     "less": "^4.1.1",
     "next": "^10.0.5",

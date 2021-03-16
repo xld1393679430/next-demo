@@ -1,5 +1,5 @@
 import React from "react";
-import MyLayout from "../components/MyLayout";
+import MyLayout from "../../components/MyLayout";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 // import "../styles.less"

@@ -1,5 +1,5 @@
 import React from "react";
-import MyLayout from "../components/MyLayout";
+import MyLayout from "../../components/MyLayout";
 import Router from 'next/router'
 import { useEffect } from "react";
 

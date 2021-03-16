@@ -1,4 +1,4 @@
-import MyLayout from "../components/MyLayout";
+import MyLayout from "../../components/MyLayout";
 import React from "react";
 import fetch from "isomorphic-unfetch";
 

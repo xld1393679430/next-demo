@@ -1,7 +1,6 @@
-import Header from "./Header";
 import React from "react";
-import "./MyLayout.less";
-
+import Header from "./Header";
+import Footer from "./Footer";
 
 const MyLayout = ({ children }) => {
     return (
@@ -12,6 +11,7 @@ const MyLayout = ({ children }) => {
             <div className={'content'}>
                 {children}
             </div>
+            <Footer />
         </div>
     )
 }

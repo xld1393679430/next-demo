@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/global.less";
+import "../public/css/styles.less";
 
 export default function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />
