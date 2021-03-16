@@ -109,6 +109,19 @@ export default class Header extends Component {
                                     <a>文章</a>
                                 </Link>
                             </div>
+                            <div
+                                onClick={() => {
+                                    this.changeActive("about");
+                                }}
+                                className={classnames({
+                                    "header-menu-item": true,
+                                    active: this.state.active === "about"
+                                })}
+                            >
+                                <Link href="/about">
+                                    <a>关于</a>
+                                </Link>
+                            </div>
                         </div>
 
                         <div className={"header-right"}>

@@ -1,16 +1,7 @@
 import React from "react";
 import MyLayout from "../../components/MyLayout";
 import Link from "next/link";
-
-const PostLink = ({title}) => {
-    return (
-        <li>
-            <Link href={`/post/[title]`} as={`/post/${title}`}>
-                <a>{title}</a>
-            </Link>
-        </li>
-    )
-}
+import Markdown from "react-markdown";
 
 const AsLink = ({title}) => {
     return (
@@ -34,32 +25,9 @@ const About = () => {
     return (
         <MyLayout>
             <p>About</p>
-            <ul>
-                {
-                    getPosts().map(item => (
-                        <li key={item.id}>
-                            <Link href={'/post/[title]'} as={`/post/${item.title}`}>
-                                <a>{item.title}</a>
-                            </Link>
-                        </li>
-                    ))
-                }
-            </ul>
-            <br />
+            <hr />
 
-            <ul>
-                {
-                    getPosts().map(item => {
-                        return <PostLink key={item.id} title={item.title} />
-                    })
-                }
-            </ul>
-
-            <br />
-            <PostLink title="Hello Next.js" />
-            <PostLink title="Learn Next.js is awesome" />
-            <PostLink title="Deploy apps with Zeit" />
-            <br />
+            <Markdown source={"href={`/post?title=${title}`} as={`/post/${title}`}"} />
             <ul>
                 <AsLink title="as-link" />
             </ul>

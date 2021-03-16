@@ -2,6 +2,8 @@ import React from 'react';
 
 export default () => {
     return (
-        <div className={["footer", "footer-main"]}></div>
+        <div className={["footer", "footer-main"]}>
+            footer
+        </div>
     )
 }
