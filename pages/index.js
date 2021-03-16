@@ -4,7 +4,6 @@ import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 // import "../styles.less"
 
-
 const Index = ({ shows }) => {
     return (
         <MyLayout>
