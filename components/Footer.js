@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default () => {
+const Page = () => {
     return (
         <div className={["footer", "footer-main"]}>
             footer
         </div>
     )
 }
+
+export default Page

@@ -3,7 +3,7 @@ import MyLayout from "../../components/MyLayout";
 import Router from 'next/router'
 import { useEffect } from "react";
 
-const Show = () => {
+const Page = () => {
 
     const handleRouteChange = (e) => {
         console.log(e, 'handleRouteChange')
@@ -25,4 +25,4 @@ const Show = () => {
     )
 }
 
-export default Show
+export default Page

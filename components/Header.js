@@ -85,6 +85,19 @@ export default class Header extends Component {
                             </div>
                             <div
                                 onClick={() => {
+                                    this.changeActive("redux");
+                                }}
+                                className={classnames({
+                                    "header-menu-item": true,
+                                    active: this.state.active === "redux"
+                                })}
+                            >
+                                <Link href="/redux">
+                                    <a>redux</a>
+                                </Link>
+                            </div>
+                            <div
+                                onClick={() => {
                                     this.changeActive("collect");
                                 }}
                                 className={classnames({

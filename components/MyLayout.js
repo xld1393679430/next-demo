@@ -3,7 +3,7 @@ import Head from "./Head";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const MyLayout = ({ children }) => {
+const Page = ({ children }) => {
     return (
         <div>
             <Head />
@@ -20,4 +20,4 @@ const MyLayout = ({ children }) => {
     )
 }
 
-export default MyLayout
+export default Page

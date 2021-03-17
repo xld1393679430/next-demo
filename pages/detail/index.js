@@ -2,7 +2,7 @@ import MyLayout from "../../components/MyLayout";
 import { useRouter } from "next/router";
 import React from "react";
 
-const Index = () => {
+const Page = () => {
     const router = useRouter()
     return (
         <MyLayout>
@@ -12,4 +12,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default Page

@@ -1,7 +1,7 @@
 import React from "react";
 import Head from 'next/head'
 
-export default () => {
+const Page = () => {
     return (
         <div>
             <Head>
@@ -11,3 +11,5 @@ export default () => {
         </div>
     )
 }
+
+export default Page

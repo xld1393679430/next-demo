@@ -5,7 +5,7 @@ import fetch from "isomorphic-unfetch";
 import Markdown from "react-markdown";
 
 
-const Index = ({ show }) => {
+const Page = ({ show }) => {
     return (
         <MyLayout>
             <h1>{ show.name }</h1>
@@ -35,11 +35,11 @@ const Index = ({ show }) => {
     )
 }
 
-Index.getInitialProps = async (context) => {
+Page.getInitialProps = async (context) => {
     const { id } = context.query
     const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
     const show = await res.json()
     return { show }
 }
 
-export default Index
+export default Page

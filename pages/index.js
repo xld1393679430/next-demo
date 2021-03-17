@@ -3,7 +3,7 @@ import MyLayout from "../components/MyLayout";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 
-const Index = ({ shows }) => {
+const Page = ({ shows = [] }) => {
     return (
         <MyLayout>
             <p>Home</p>
@@ -25,7 +25,7 @@ const Index = ({ shows }) => {
     )
 }
 
-Index.getInitialProps = async () => {
+Page.getInitialProps = async () => {
     const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
     const shows = await res.json()
     return {
@@ -33,4 +33,4 @@ Index.getInitialProps = async () => {
     }
 }
 
-export default Index
+export default Page

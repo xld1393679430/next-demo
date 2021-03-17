@@ -13,15 +13,7 @@ const AsLink = ({title}) => {
     )
 }
 
-const getPosts = () => {
-    return [
-        {id: "hello-nextjs", title: "hello-next"},
-        {id: "learn-nextjs", title: "learn-nextjs"},
-        {id: "deploy-nextjs", title: "deploy-nextjs"}
-    ];
-}
-
-const About = () => {
+const Page = () => {
     return (
         <MyLayout>
             <p>About</p>
@@ -55,4 +47,4 @@ const About = () => {
     )
 }
 
-export default About
+export default Page
