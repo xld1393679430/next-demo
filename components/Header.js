@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Router from 'next/router'
-import React, { Component } from "react";
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from "react";
 import { Menu, Button, Dropdown } from "antd";
 import classnames from 'classnames';
 import { UserOutlined } from "@ant-design/icons";
@@ -43,125 +43,121 @@ const menu = (
     </Menu>
 );
 
-export default class Header extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            active: "home" //home article collect
-        };
-    }
-
-    changeActive(active) {
-        this.setState({
-            active
-        });
-    }
-
-    render() {
-        return (
-            <div className={"nav nav-main header"}>
-                <div className={" header-inner"}>
-                    <div className={"header-content"}>
-                        <div className={"header-left"}>
-                            <div className={"logo"}>
-                                <img src="/images/logo.png"
-                                     alt="logo"></img>
-                            </div>
+const Header = () => {
+    const [active, setActive] = useState('/')
+    const router = useRouter()
+    useEffect(() => {
+        const path = router.pathname.split('/')
+        if (path.length && path[1]) {
+            setActive(`${path[1]}`)
+        } else {
+            setActive('/')
+        }
+    }, [])
+    return (
+        <div className={"nav nav-main header"}>
+            <div className={" header-inner"}>
+                <div className={"header-content"}>
+                    <div className={"header-left"}>
+                        <div className={"logo"}>
+                            <img src="/images/logo.png"
+                                 alt="logo"></img>
                         </div>
-                        <div className="header-menu">
-                            <div
-                                onClick={() => {
-                                    this.changeActive("home");
-                                }}
-                                className={classnames({
-                                    "header-menu-item": true,
-                                    active: this.state.active === "home"
-                                })}
-                            >
-                                <Link href="/">
-                                    <a>首页</a>
-                                </Link>
-                            </div>
-                            <div
-                                onClick={() => {
-                                    this.changeActive("redux");
-                                }}
-                                className={classnames({
-                                    "header-menu-item": true,
-                                    active: this.state.active === "redux"
-                                })}
-                            >
-                                <Link href="/redux">
-                                    <a>redux</a>
-                                </Link>
-                            </div>
-                            <div
-                                onClick={() => {
-                                    this.changeActive("collect");
-                                }}
-                                className={classnames({
-                                    "header-menu-item": true,
-                                    active: this.state.active === "collect"
-                                })}
-                            >
-                                <Link href="/article">
-                                    <a>专辑</a>
-                                </Link>
-                            </div>
-                            <div
-                                onClick={() => {
-                                    this.changeActive("article");
-                                }}
-                                className={classnames({
-                                    "header-menu-item": true,
-                                    active: this.state.active === "article"
-                                })}
-                            >
-                                <Link href="/article">
-                                    <a>文章</a>
-                                </Link>
-                            </div>
-                            <div
-                                onClick={() => {
-                                    this.changeActive("about");
-                                }}
-                                className={classnames({
-                                    "header-menu-item": true,
-                                    active: this.state.active === "about"
-                                })}
-                            >
-                                <Link href="/about">
-                                    <a>关于</a>
-                                </Link>
-                            </div>
+                    </div>
+                    <div className="header-menu">
+                        <div
+                            onClick={() => {
+                                setActive("/");
+                            }}
+                            className={classnames({
+                                "header-menu-item": true,
+                                active: active === "/"
+                            })}
+                        >
+                            <Link href="/">
+                                <a>首页</a>
+                            </Link>
                         </div>
+                        <div
+                            onClick={() => {
+                                setActive("redux");
+                            }}
+                            className={classnames({
+                                "header-menu-item": true,
+                                active: active === "redux"
+                            })}
+                        >
+                            <Link href="/redux">
+                                <a>redux</a>
+                            </Link>
+                        </div>
+                        <div
+                            onClick={() => {
+                                setActive("collect");
+                            }}
+                            className={classnames({
+                                "header-menu-item": true,
+                                active: active === "collect"
+                            })}
+                        >
+                            <Link href="/article">
+                                <a>专辑</a>
+                            </Link>
+                        </div>
+                        <div
+                            onClick={() => {
+                                setActive("article");
+                            }}
+                            className={classnames({
+                                "header-menu-item": true,
+                                active: active === "article"
+                            })}
+                        >
+                            <Link href="/article">
+                                <a>文章</a>
+                            </Link>
+                        </div>
+                        <div
+                            onClick={() => {
+                                setActive("about");
+                            }}
+                            className={classnames({
+                                "header-menu-item": true,
+                                active: active === "about"
+                            })}
+                        >
+                            <Link href="/about">
+                                <a>关于</a>
+                            </Link>
+                        </div>
+                    </div>
 
-                        <div className={"header-right"}>
-                            <Dropdown overlay={menu}
-                                      trigger={["click"]}
-                                      placement="bottomCenter">
-                                <div className={"avatar"}>
-                                    <img
-                                        src="https://images.xiaozhuanlan.com/photo/2019/2ad6384db0b94cd8e76d11194400df23.jpeg"
-                                        alt="avatar"
-                                    ></img>
-                                </div>
-                            </Dropdown>
-                        </div>
+                    <div className={"header-right"}>
+                        <Dropdown overlay={menu}
+                                  trigger={["click"]}
+                                  placement="bottomCenter">
+                            <div className={"avatar"}>
+                                <img
+                                    src="https://images.xiaozhuanlan.com/photo/2019/2ad6384db0b94cd8e76d11194400df23.jpeg"
+                                    alt="avatar"
+                                ></img>
+                            </div>
+                        </Dropdown>
+                    </div>
 
-                        <div className="header-btn">
-                            <Button type="danger"
-                                    ghost
-                                    shape="round"
-                                    icon="edit"
-                                    onClick={() => Router.push("/write")}>
-                                写文章>
-                            </Button>
-                        </div>
+                    <div className="header-btn">
+                        <Button type="danger"
+                                ghost
+                                shape="round"
+                                icon="edit"
+                                onClick={() => router.push("/write")}>
+                            写文章>
+                        </Button>
                     </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    )
 }
+
+export default Header

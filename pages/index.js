@@ -11,12 +11,9 @@ const Page = ({ shows = [] }) => {
                 {
                     shows.map(item => (
                         <li key={item.id}>
-                            <Link href={'/detail/[id]'} as={`/detail/${item.id}`}>
+                            <Link href={`/detail?id=${item.id}`}>
                                 <a>{item.name}</a>
                             </Link>
-                            {/*<Link href={`/detail?id=${item.id}`}>*/}
-                            {/*    <a>{item.name}</a>*/}
-                            {/*</Link>*/}
                         </li>
                     ))
                 }
