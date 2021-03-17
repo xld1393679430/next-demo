@@ -65,7 +65,7 @@ export default class Header extends Component {
                     <div className={"header-content"}>
                         <div className={"header-left"}>
                             <div className={"logo"}>
-                                <img src="https://www.freelogodesign.org/Content/img/logo-samples/bakary.png"
+                                <img src="/images/logo.png"
                                      alt="logo"></img>
                             </div>
                         </div>

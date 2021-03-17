@@ -1,12 +1,12 @@
-import React from "react";
-import Head from "./Head";
+import React, { Fragment } from "react";
+import MyHead from "./MyHead";
 import Header from "./Header";
 import Footer from "./Footer";
 
 const Page = ({ children }) => {
     return (
-        <div>
-            <Head />
+        <Fragment>
+            <MyHead />
             <div className={'header'}>
                 <Header />
             </div>
@@ -16,7 +16,7 @@ const Page = ({ children }) => {
             <div className={'footer'}>
                 <Footer />
             </div>
-        </div>
+        </Fragment>
     )
 }
 
