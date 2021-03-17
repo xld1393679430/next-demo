@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next --port 3002",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "server:dev": "node server.js",
     "server:start": "NODE_ENV=production node server.js"
